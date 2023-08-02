@@ -8,7 +8,7 @@ public class Cabeca : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            FindObjectOfType<GameManege>().AdicionarPonto(1);
+            FindObjectOfType<GameManege>().ColetarCabeca(1);
             Destroy(gameObject);
         }
     }
