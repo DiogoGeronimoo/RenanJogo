@@ -24,10 +24,12 @@ public class Orsilador : MonoBehaviour
 
     [Range(0, 360)] public int anguloInicial;
     public Vector3 posicao_inicial;
+    public bool olhandoPradireita;
 
     private void Start()
     {
         posicao_inicial = transform.position;
+        angulo = anguloInicial;
     }
 
 
@@ -66,6 +68,23 @@ public class Orsilador : MonoBehaviour
         {
             angulo -= 360;
         }
+
+        if (angulo >= 180)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+            olhandoPradireita = false;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+            olhandoPradireita = true;
+
+        }
+        
+        
+        
+        
+        
     }
 
     void ResetarRotacao()
